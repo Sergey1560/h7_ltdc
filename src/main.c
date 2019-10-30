@@ -23,13 +23,7 @@ void gr_test(uint16_t *mem){
             color=GREEN;
         }
         for(uint8_t i=0; i < 100;i++){
-               #ifdef ENABLE_DCACHE
-               SCB_CleanDCache();
-               #endif
                *mem++=color;
-               #ifdef ENABLE_DCACHE
-               SCB_InvalidateDCache();
-               #endif
         };
     };
 };
